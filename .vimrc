@@ -24,6 +24,7 @@ syntax on
 
 set nocompatible
 set number ruler " show line numbers
+set colorcolumn=80
 set cursorline
 set encoding=utf8
 set fileencoding=utf8
