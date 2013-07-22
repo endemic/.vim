@@ -9,6 +9,7 @@ Bundle 'kchmck/vim-coffee-script'
 Bundle 'scrooloose/nerdtree'
 Bundle 'jiangmiao/auto-pairs'
 Bundle 'kien/ctrlp.vim'
+Bundle 'tpope/vim-haml'
 
 filetype plugin indent on
 
@@ -19,10 +20,10 @@ if has("gui_running")
 endif
 
 set t_Co=256 " Enable 256 colors
-colorscheme vividchalk
+colorscheme molokai
 syntax on
 
-set nocompatible
+"set nocompatible
 set number ruler " show line numbers
 set colorcolumn=80
 set cursorline
@@ -35,3 +36,20 @@ set tabstop=2 " 2 spaces per tab
 
 map <S-h> gT
 map <S-l> gt
+
+" automatically remove trailing whitespace on save
+fun! <SID>StripTrailingWhitespaces()
+  let l = line(".")
+  let c = col(".")
+  %s/\s\+$//e
+  call cursor(l, c)
+endfun
+autocmd BufWritePre *.rb,*.erb,*.haml,*.hamlc,*.slim,*.html,*.php,*.yaml,*.yml,*.css,*.scss,*.sass,*.js,*.coffee,*.rake :call <SID>StripTrailingWhitespaces()
+
+set pastetoggle=<F2>
+
+set splitbelow
+set splitright
+
+" Improve syntax highlighting
+au BufRead,BufNewFile Gemfile,Guardfile set filetype=ruby
