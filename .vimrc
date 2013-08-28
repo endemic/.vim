@@ -17,15 +17,13 @@ Bundle 'bling/vim-airline'
 
 filetype plugin indent on
 
-if has("gui_running")
-  set guifont=Consolas:h14
-  set lines=80
-  set columns=100
-endif
-
 set t_Co=256 " Enable 256 colors
 colorscheme molokai
 syntax on
+
+if has("gui_running")
+  set guifont=Consolas:h14
+endif
 
 set nocompatible
 set number ruler " show line numbers
@@ -40,6 +38,8 @@ set tabstop=2    " 2 spaces per tab
 set laststatus=2 " Always show status bar
 set lazyredraw   " Try to draw faster
 
+let g:airline_powerline_fonts = 1 " Use powerline fonts in airline
+
 map <C-h> gT
 map <C-l> gt
 
@@ -50,6 +50,7 @@ set splitright
 
 " Improve syntax highlighting
 au BufRead,BufNewFile Gemfile,Guardfile set filetype=ruby
+au BufRead,BufNewFile *.hamlc set filetype=haml
 
 " Create directory on save if needed
 function s:MkNonExDir(file, buf)
