@@ -51,6 +51,7 @@ set splitright
 " Improve syntax highlighting
 au BufRead,BufNewFile Gemfile,Guardfile set filetype=ruby
 au BufRead,BufNewFile *.hamlc set filetype=haml
+au BufRead,BufNewFile *.json set filetype=javascript
 
 " Create directory on save if needed
 function s:MkNonExDir(file, buf)
