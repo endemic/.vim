@@ -11,6 +11,7 @@ Bundle 'scrooloose/nerdtree'
 Bundle 'jistr/vim-nerdtree-tabs'
 Bundle 'kien/ctrlp.vim'
 Bundle 'tpope/vim-haml'
+Bundle 'tpope/vim-markdown'
 Bundle 'FuDesign2008/jslhint.vim'
 Bundle 'rking/ag.vim'
 Bundle 'bling/vim-airline'
@@ -51,6 +52,7 @@ set splitright
 " Improve syntax highlighting
 au BufRead,BufNewFile Gemfile,Guardfile,*.ru set filetype=ruby
 au BufRead,BufNewFile *.hamlc set filetype=haml
+au BufRead,BufNewFile *.json set filetype=javascript
 
 " Create directory on save if needed
 function s:MkNonExDir(file, buf)
