@@ -20,6 +20,7 @@ Bundle 'kchmck/vim-coffee-script'
 
 " Remove trailing whitespace
 Bundle 'csexton/trailertrash.vim'
+let g:trailertrash_blacklist = ['.git/COMMIT_EDITMSG'] " don't show trailing whitespace when committing
 
 " Static analysis
 Bundle 'scrooloose/syntastic'
@@ -54,7 +55,9 @@ set shiftwidth=2
 set tabstop=2    " 2 spaces per tab
 set laststatus=2 " Always show status bar
 set lazyredraw   " Try to draw faster
+set scrolloff=3  " Start scrolling 3 lines before the border
 
+" Move to adjacent tabs with ctrl+h/ctrl+l
 map <C-h> gT
 map <C-l> gt
 
