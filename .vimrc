@@ -49,7 +49,7 @@ set splitbelow
 set splitright
 
 " Improve syntax highlighting
-au BufRead,BufNewFile Gemfile,Guardfile set filetype=ruby
+au BufRead,BufNewFile Gemfile,Guardfile,*.ru set filetype=ruby
 au BufRead,BufNewFile *.hamlc set filetype=haml
 
 " Create directory on save if needed
