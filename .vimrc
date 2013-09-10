@@ -3,18 +3,34 @@ call vundle#rc()
 
 Bundle 'gmarik/vundle'
 
-" bundles here
+" Tab autocomplete
 Bundle 'ervandew/supertab'
-Bundle 'kchmck/vim-coffee-script'
-Bundle 'scrooloose/syntastic'
+
+" File explorer
 Bundle 'scrooloose/nerdtree'
 Bundle 'jistr/vim-nerdtree-tabs'
+
+" Fuzzy file search
 Bundle 'kien/ctrlp.vim'
+
+" Syntax highlighting
 Bundle 'tpope/vim-haml'
 Bundle 'tpope/vim-markdown'
+Bundle 'kchmck/vim-coffee-script'
+
+" Remove trailing whitespace
+Bundle 'csexton/trailertrash.vim'
+
+" Static analysis
+Bundle 'scrooloose/syntastic'
 Bundle 'FuDesign2008/jslhint.vim'
+
+" Text search
 Bundle 'rking/ag.vim'
+
+" Status bar
 Bundle 'bling/vim-airline'
+let g:airline_powerline_fonts = 1 " Use powerline fonts in airline
 
 filetype plugin indent on
 
@@ -38,8 +54,6 @@ set shiftwidth=2
 set tabstop=2    " 2 spaces per tab
 set laststatus=2 " Always show status bar
 set lazyredraw   " Try to draw faster
-
-let g:airline_powerline_fonts = 1 " Use powerline fonts in airline
 
 map <C-h> gT
 map <C-l> gt
