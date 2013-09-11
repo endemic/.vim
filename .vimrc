@@ -39,9 +39,10 @@ set t_Co=256 " Enable 256 colors
 colorscheme molokai
 syntax on
 
-if has("gui_running")
-  set guifont=Consolas:h14
-endif
+" Improve syntax highlighting
+au BufRead,BufNewFile Gemfile,Guardfile,*.ru set filetype=ruby
+au BufRead,BufNewFile *.hamlc set filetype=haml
+au BufRead,BufNewFile *.json set filetype=javascript
 
 set nocompatible
 set number ruler " show line numbers
@@ -56,20 +57,14 @@ set tabstop=2    " 2 spaces per tab
 set laststatus=2 " Always show status bar
 set lazyredraw   " Try to draw faster
 set scrolloff=3  " Start scrolling 3 lines before the border
+set pastetoggle=<F2> " Use F2 for proper paste indentation
 
 " Move to adjacent tabs with ctrl+h/ctrl+l
 map <C-h> gT
 map <C-l> gt
 
-set pastetoggle=<F2>
-
 set splitbelow
 set splitright
-
-" Improve syntax highlighting
-au BufRead,BufNewFile Gemfile,Guardfile,*.ru set filetype=ruby
-au BufRead,BufNewFile *.hamlc set filetype=haml
-au BufRead,BufNewFile *.json set filetype=javascript
 
 " Create directory on save if needed
 function s:MkNonExDir(file, buf)
