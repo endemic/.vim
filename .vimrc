@@ -32,6 +32,7 @@ Bundle 'rking/ag.vim'
 " Status bar
 Bundle 'bling/vim-airline'
 let g:airline_powerline_fonts = 1 " Use powerline fonts in airline
+let g:airline#extensions#tabline#enabled = 1 " Add tabline extension
 
 filetype plugin indent on
 
@@ -58,6 +59,9 @@ set laststatus=2 " Always show status bar
 set lazyredraw   " Try to draw faster
 set scrolloff=3  " Start scrolling 3 lines before the border
 set pastetoggle=<F2> " Use F2 for proper paste indentation
+
+" PHP tabwidth
+autocmd FileType php setlocal shiftwidth=4 tabstop=4 noexpandtab
 
 " Move to adjacent tabs with ctrl+h/ctrl+l
 map <C-h> gT
