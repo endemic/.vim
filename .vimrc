@@ -12,6 +12,7 @@ Bundle 'jistr/vim-nerdtree-tabs'
 
 " Fuzzy file search
 Bundle 'kien/ctrlp.vim'
+set wildignore+=*/node_modules/*
 
 " Syntax highlighting
 Bundle 'tpope/vim-haml'
@@ -41,7 +42,7 @@ colorscheme molokai
 syntax on
 
 " Improve syntax highlighting
-au BufRead,BufNewFile Gemfile,Guardfile,*.ru set filetype=ruby
+au BufRead,BufNewFile Gemfile,Guardfile,*.ru,*.pill set filetype=ruby
 au BufRead,BufNewFile *.hamlc set filetype=haml
 au BufRead,BufNewFile *.json set filetype=javascript
 
@@ -60,8 +61,9 @@ set lazyredraw   " Try to draw faster
 set scrolloff=3  " Start scrolling 3 lines before the border
 set pastetoggle=<F2> " Use F2 for proper paste indentation
 
-" PHP tabwidth
+" tabwidth
 autocmd FileType php setlocal shiftwidth=4 tabstop=4 noexpandtab
+autocmd FileType javascript setlocal shiftwidth=4 tabstop=4 expandtab
 
 " Move to adjacent tabs with ctrl+h/ctrl+l
 map <C-h> gT
