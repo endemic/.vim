@@ -64,6 +64,7 @@ set pastetoggle=<F2> " Use F2 for proper paste indentation
 " tabwidth
 autocmd FileType php setlocal shiftwidth=4 tabstop=4 noexpandtab
 autocmd FileType javascript setlocal shiftwidth=4 tabstop=4 expandtab
+autocmd FileType coffeescript setlocal shiftwidth=2 tabstop=2 noexpandtab
 
 " Move to adjacent tabs with ctrl+h/ctrl+l
 map <C-h> gT
