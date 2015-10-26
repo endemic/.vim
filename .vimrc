@@ -1,41 +1,48 @@
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
+set nocompatible " Required
+filetype off
 
-Bundle 'gmarik/vundle'
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+
+" let Vundle manage Vundle, required
+Plugin 'VundleVim/Vundle.vim'
 
 " Tab autocomplete
-Bundle 'ervandew/supertab'
+Plugin 'ervandew/supertab'
 
 " File explorer
-Bundle 'scrooloose/nerdtree'
-Bundle 'jistr/vim-nerdtree-tabs'
+Plugin 'scrooloose/nerdtree'
+Plugin 'jistr/vim-nerdtree-tabs'
 
 " Fuzzy file search
-Bundle 'kien/ctrlp.vim'
+Plugin 'kien/ctrlp.vim'
 set wildignore+=*/node_modules/*
 
 " Syntax highlighting
-Bundle 'tpope/vim-haml'
-Bundle 'tpope/vim-markdown'
-Bundle 'kchmck/vim-coffee-script'
+Plugin 'tpope/vim-haml'
+Plugin 'tpope/vim-markdown'
+Plugin 'kchmck/vim-coffee-script'
+Plugin 'briancollins/vim-jst'
+Plugin 'pangloss/vim-javascript'
 
 " Remove trailing whitespace
-Bundle 'csexton/trailertrash.vim'
+Plugin 'csexton/trailertrash.vim'
 let g:trailertrash_blacklist = ['.git/COMMIT_EDITMSG'] " don't show trailing whitespace when committing
 
 " Static analysis
-Bundle 'scrooloose/syntastic'
-Bundle 'FuDesign2008/jslhint.vim'
+Plugin 'scrooloose/syntastic'
 
 " Text search
-Bundle 'rking/ag.vim'
+Plugin 'rking/ag.vim'
 
 " Status bar
-Bundle 'bling/vim-airline'
-let g:airline_powerline_fonts = 1 " Use powerline fonts in airline
+Plugin 'bling/vim-airline'
+"let g:airline_powerline_fonts = 1 " Use powerline fonts in airline
 let g:airline#extensions#tabline#enabled = 1 " Add tabline extension
 
-filetype plugin indent on
+call vundle#end()         " Required
+filetype plugin indent on " Required
 
 set t_Co=256 " Enable 256 colors
 colorscheme molokai
@@ -44,9 +51,8 @@ syntax on
 " Improve syntax highlighting
 au BufRead,BufNewFile Gemfile,Guardfile,*.ru,*.pill set filetype=ruby
 au BufRead,BufNewFile *.hamlc set filetype=haml
-au BufRead,BufNewFile *.json set filetype=javascript
+au BufRead,BufNewFile *.json,*.ejs set filetype=javascript
 
-set nocompatible
 set number ruler " show line numbers
 set colorcolumn=80
 set cursorline
