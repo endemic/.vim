@@ -22,9 +22,9 @@ set wildignore+=*/node_modules/*
 " Syntax highlighting
 Plugin 'tpope/vim-haml'
 Plugin 'tpope/vim-markdown'
-Plugin 'kchmck/vim-coffee-script'
-Plugin 'briancollins/vim-jst'
 Plugin 'pangloss/vim-javascript'
+Plugin 'groenewege/vim-less'
+Plugin 'rust-lang/rust.vim'
 
 " Remove trailing whitespace
 Plugin 'csexton/trailertrash.vim'
@@ -44,6 +44,7 @@ let g:airline#extensions#tabline#enabled = 1 " Add tabline extension
 call vundle#end()         " Required
 filetype plugin indent on " Required
 
+" http://vimcolors.com/
 set t_Co=256 " Enable 256 colors
 colorscheme molokai
 syntax on
