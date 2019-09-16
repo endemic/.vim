@@ -11,20 +11,16 @@ Plugin 'VundleVim/Vundle.vim'
 " Tab autocomplete
 Plugin 'ervandew/supertab'
 
-" File explorer
-Plugin 'scrooloose/nerdtree'
-Plugin 'jistr/vim-nerdtree-tabs'
-
 " Fuzzy file search
 Plugin 'kien/ctrlp.vim'
 set wildignore+=*/node_modules/*
 
 " Syntax highlighting
-Plugin 'tpope/vim-haml'
 Plugin 'tpope/vim-markdown'
 Plugin 'pangloss/vim-javascript'
 Plugin 'groenewege/vim-less'
 Plugin 'rust-lang/rust.vim'
+Plugin 'lambdatoast/elm.vim'
 
 " Remove trailing whitespace
 Plugin 'csexton/trailertrash.vim'
@@ -69,7 +65,7 @@ set scrolloff=3  " Start scrolling 3 lines before the border
 set pastetoggle=<F2> " Use F2 for proper paste indentation
 
 " tabwidth
-autocmd FileType php setlocal shiftwidth=4 tabstop=4 noexpandtab
+autocmd FileType php setlocal shiftwidth=4 tabstop=4 expandtab
 autocmd FileType javascript setlocal shiftwidth=4 tabstop=4 expandtab
 autocmd FileType coffeescript setlocal shiftwidth=2 tabstop=2 noexpandtab
 
